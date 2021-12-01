@@ -125,7 +125,7 @@ void *bubble_sort(void *input_tinfo)
 
 void *merge(void *input_tinfo)
 {
-    // Sorting algorithm can be brute‐force methods, e.g., bubble sort
+
     struct arrInfo2 list;
     list = *(struct arrInfo2 *)input_tinfo;
     int start = list.head;
@@ -140,19 +140,17 @@ void *merge(void *input_tinfo)
     for (i = 0; i < middle - start; i++)
     {
         temp1[i] = list.arr[i + start];
-        //cout << temp1[i] << taill;
     }
     for (i = 0; i < end - middle; i++)
     {
         temp2[i] = list.arr[i + middle];
-        //cout << temp2[i] << taill;
     }
     for (i = 0; i < total; i++)
     {
         if (temp1[now1] < temp2[now2])
         {
             list.arr[i + start] = temp1[now1];
-            //cout << "temp1[now1]: " << temp1[now1] << taill;
+
             now1++;
             if (now1 >= middle - start)
                 break;
@@ -160,14 +158,14 @@ void *merge(void *input_tinfo)
         else
         {
             list.arr[i + start] = temp2[now2];
-            //cout << "temp2[now2]: " << temp2[now2] << taill;
+
             now2++;
             if (now2 >= end - middle)
                 break;
         }
     }
     i++;
-    //cout << "partial done" << taill;
+
     if (i < total)
     {
         if (now1 < middle - start)
@@ -175,7 +173,7 @@ void *merge(void *input_tinfo)
             for (; i < total; i++)
             {
                 list.arr[i + start] = temp1[now1];
-                //cout << "temp1[now1]: " << temp1[now1] << taill;
+
                 now1++;
             }
         }
@@ -184,7 +182,6 @@ void *merge(void *input_tinfo)
             for (; i < total; i++)
             {
                 list.arr[i + start] = temp2[now2];
-                //cout << "temp2[now2]: " << temp2[now2] << taill;
                 now2++;
             }
         }
