@@ -95,7 +95,6 @@ int main(int listc, const char *listv[])
     {
         cout << array[i] << " ";
     }
-    cout << endl;
 
     return 0;
 }
